@@ -1,0 +1,142 @@
+
+<div class="container">
+    <br>
+    <h2>Compania Seguro con id = {{id}}</h2>
+    <br>
+    <div class="container">
+        <p-accordion  >
+            <p-accordionTab header="Compañia Info">
+                <div class="container-form">
+                <form  id="crearCompania">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Nombre Compañia</label>
+                                <input type="text" class="form-control" aria-describedby="nombreCompania" disabled="true" name="nombreCompania" [(ngModel)] = "compania.nombreCompania">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Clase Via</label>
+                                <input type="text" class="form-control" aria-describedby="claseVia" name="claseVia" disabled="true" [(ngModel)] = "compania.claseVia" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Nombre Via</label>
+                                <input type="text" class="form-control" aria-describedby="nombreVia" name="nombreVia" disabled="true" [(ngModel)] = "compania.nombreVia" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Numero Via</label>
+                                <input type="number" class="form-control" aria-describedby="numeroVia" name="numeroVia" disabled="true" [(ngModel)] = "compania.numeroVia" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Codigo Postal</label>
+                                <input type="number" class="form-control" aria-describedby="codPostal" name="codPostal" disabled="true" [(ngModel)] = "compania.codPostal" required>
+                            </div> 
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Telefono Contrataciones</label>
+                                <input type="number" class="form-control" aria-describedby="telefonoContratacion"  disabled="true" name="telefonoContratacion" [(ngModel)] = "compania.telefonoContratacion" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Telefono Siniestro</label>
+                                <input type="number" class="form-control" aria-describedby="telefonoSiniestros" disabled="true" name="telefonoSiniestros" [(ngModel)] = "compania.telefonoSiniestros" required>
+                            </div> 
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Notas</label>
+                                <input type="text" class="form-control" aria-describedby="notas" name="notas"  disabled="true" [(ngModel)] = "compania.notas" required>
+                            </div>
+                        </div>
+                    </div>
+
+             
+                </form>
+            </div>
+            </p-accordionTab>
+        </p-accordion>
+</div>
+<br>
+<br>
+<div  class="container ">
+    <p-accordion>
+        <p-accordionTab header="Seguro">
+            <div class="container-form">
+                <form  id="nuevoSeguroForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Numero  Poliza</label>
+                                <input type="number" class="form-control" aria-describedby="numeroPoliza" disabled="true" name="numeroPoliza" [(ngModel)] = "seguro.numeroPoliza" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Ramo</label>
+                                <input type="text" class="form-control" aria-describedby="ramo" name="ramo" disabled="true" [(ngModel)] = "seguro.ramo" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Fecha Inicio</label>
+                                <input type="date" class="form-control" aria-describedby="fechaInicio" disabled="true" name="fechaInicio" [(ngModel)] = "seguro.fechaInicio" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Fecha Vencimiento</label>
+                                <input type="date" class="form-control" aria-describedby="fechaVencimiento" disabled="true" name="fechaVencimiento" [(ngModel)] = "seguro.fechaVencimiento" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Condiciones Particulares</label>
+                                <input type="text" class="form-control" aria-describedby="condicionesParticulares" disabled="true" name="condicionesParticulares" [(ngModel)] = "seguro.condicionesParticulares" required>
+                            </div> 
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Observaciones</label>
+                                <input type="text" class="form-control" aria-describedby="observaciones" disabled="true" name="observaciones" [(ngModel)] = "seguro.observaciones" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Cliente Dni</label>
+                                <input type="number" class="form-control" aria-describedby="dniCl" disabled="true" name="dniCl" [(ngModel)] = "seguro.dniCl" required>
+                            </div> 
+                        </div>
+                    </div>
+            
+             
+                </form>
+            </div>
+        </p-accordionTab>
+    </p-accordion>
+</div>
+<br>
+<br>
+<br>
+
+

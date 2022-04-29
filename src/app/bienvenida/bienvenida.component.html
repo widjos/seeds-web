@@ -1,0 +1,30 @@
+<div class="parent">
+<div class="center">
+    <p-carousel [value]="options" [numVisible]="4" [numScroll]="1"  >
+        <ng-template let-options pTemplate="item">
+            <div class="card">
+                <p-card>
+                    <div class="button-icon">
+                        <div class="card-over">
+                            <fa-icon class="center icono fa-8x" [icon]="options.icon" routerLink="{{options.route}}">
+                            </fa-icon>
+
+                        </div>
+                    </div>
+                    <div class="banner-name">
+
+                        {{options.tittle}}
+
+                    </div>
+                </p-card>
+
+            </div>
+
+
+
+        </ng-template>
+    </p-carousel>
+</div>
+</div>
+
+<br>

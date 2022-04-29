@@ -1,0 +1,93 @@
+<p-toast></p-toast>
+<p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000" rejectButtonStyleClass="p-button-text">
+</p-confirmDialog>
+
+<div class="container">
+    <h2> <i class="pi pi-user-plus"></i> Seguro por compañia </h2>
+    <br>
+    <div class="container">
+        <p-accordion>
+            <p-accordionTab header="Agregar seguro a compañia">
+                <div class="container-form">
+                    <form id="crearCompSeguro">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Identificador</label>
+                                    <input type="number" class="form-control" aria-describedby="id" name="id"
+                                        [(ngModel)]="nuevaCompaniaSeguro.id" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Nombre Compania</label>
+                                    <input type="text" class="form-control" aria-describedby="nombreCompania"
+                                        name="nombreCompania" [(ngModel)]="nuevaCompaniaSeguro.nombreCompania" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Numero Poliza</label>
+                                    <input type="text" class="form-control" aria-describedby="numeroPoliza"
+                                        name="numeroPoliza" [(ngModel)]="nuevaCompaniaSeguro.numeroPoliza" required>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button type="button"
+                                (click)="registrarCompSeguro({'id': nuevaCompaniaSeguro.id},nuevaCompaniaSeguro.nombreCompania,nuevaCompaniaSeguro.numeroPoliza)"
+                                class="btn btn-primary">Registrar Compania Seguro</button>
+                        </div>
+                    </div>
+                </div>
+            </p-accordionTab>
+        </p-accordion>
+    </div>
+    <br>
+    <hr>
+    <br>
+</div>
+
+<div class="container">
+    <h2> Compañias y Seguros </h2>
+    <br>
+    <p-table [value]="companiaSeguros" [scrollable]="true" scrollHeight="400px">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Id</th>
+                <th>Nombre Compañia</th>
+                <th>Seguro Id</th>
+                <th>opciones</th>
+
+
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-comseguro>
+            <tr [pReorderableRow]="comseguro.id">
+                <td>{{comseguro.id}}</td>
+                <td>{{comseguro.compania.nombreCompania}}</td>
+                <td>{{comseguro.seguro.numeroPoliza}}</td>
+                <td>
+                    <div class="col-md-3">
+                        <p-button icon="pi pi-search" class="p-button-rounded p-button-success"
+                            (onClick)="mostrarInfo(comseguro.id)"></p-button>
+                    </div>
+                    <div class="col-md-3">
+                        <p-button icon="pi pi-pencil" (onClick)="modificarCompSeguro(comseguro)"
+                            styleClass="p-button-warning"></p-button>
+                    </div>
+                    <div class="col-md-3">
+                        <p-button icon="pi pi-trash" (onClick)="eliminarCompSeguro(comseguro.id)"
+                            styleClass="p-button-danger"></p-button>
+                    </div>
+                </td>
+
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

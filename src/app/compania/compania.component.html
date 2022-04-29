@@ -1,0 +1,126 @@
+<p-toast></p-toast>
+<p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000" rejectButtonStyleClass="p-button-text"></p-confirmDialog> 
+
+<div class="container">
+    <h2 > <i class="pi pi-user-plus"></i> Agregar nueva compañia </h2>
+    <br>
+    <div class="container">
+        <p-accordion  >
+            <p-accordionTab header="Nueva Compañia">
+                <div class="container-form">
+                <form  id="crearCompania">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Nombre Compañia</label>
+                                <input type="text" class="form-control" aria-describedby="nombreCompania"  name="nombreCompania" [(ngModel)] = "nuevaCompania.nombreCompania" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Clase Via</label>
+                                <input type="text" class="form-control" aria-describedby="claseVia" name="claseVia" [(ngModel)] = "nuevaCompania.claseVia" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Nombre Via</label>
+                                <input type="text" class="form-control" aria-describedby="nombreVia" name="nombreVia" [(ngModel)] = "nuevaCompania.nombreVia" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Numero Via</label>
+                                <input type="number" class="form-control" aria-describedby="numeroVia" name="numeroVia" [(ngModel)] = "nuevaCompania.numeroVia" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Codigo Postal</label>
+                                <input type="number" class="form-control" aria-describedby="codPostal" name="codPostal" [(ngModel)] = "nuevaCompania.codPostal" required>
+                            </div> 
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Telefono Contrataciones</label>
+                                <input type="number" class="form-control" aria-describedby="telefonoContratacion" name="telefonoContratacion" [(ngModel)] = "nuevaCompania.telefonoContratacion" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Telefono Siniestro</label>
+                                <input type="number" class="form-control" aria-describedby="telefonoSiniestros" name="telefonoSiniestros" [(ngModel)] = "nuevaCompania.telefonoSiniestros" required>
+                            </div> 
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Notas</label>
+                                <input type="text" class="form-control" aria-describedby="notas" name="notas" [(ngModel)] = "nuevaCompania.notas" required>
+                            </div>
+                        </div>
+                    </div>
+
+             
+                </form>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" (click)="registrarCompania()" class="btn btn-primary" >Registrar Usuario</button>
+                    </div>
+                </div>
+            </div>
+            </p-accordionTab>
+        </p-accordion>
+        </div>
+<hr>
+<br>
+</div>
+
+<div class="container">
+    <h2> Compañias </h2>
+    <br>
+    <p-table [value]="companias"  [scrollable]="true"  scrollHeight="400px">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Nombre Compania</th>
+                <th>Clase Via</th>
+                <th>Nombre Via</th>
+                <th>Numero Via</th>
+                <th>CodPostal</th>
+                <th>Tel. Contrataciones</th>
+                <th>Tel. Siniestro</th>
+                <th>Notas</th>
+                <th>opciones</th>
+
+
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-companias>
+            <tr [pReorderableRow]="companias.nombreCompania">
+                <td>{{companias.nombreCompania}}</td>
+                <td>{{companias.claseVia}}</td>
+                <td>{{companias.nombreVia}}</td>
+                <td>{{companias.numeroVia}}</td>
+                <td>{{companias.codPostal}}</td>
+                <td>{{companias.telefonoContratacion}}</td>
+                <td>{{companias.telefonoSiniestros}}</td>
+                <td>{{companias.notas}}</td>
+                <td> <div class="col-md-6">
+                    <p-button icon="pi pi-pencil" (onClick)="modificarCompania(companias)" styleClass="p-button-warning"></p-button>
+                </div>
+                <div class="col-md-6">  
+                    <p-button icon="pi pi-trash" (onClick)="eliminarCompania(companias.nombreCompania)" styleClass="p-button-danger"></p-button>
+                </div>
+                </td>
+             
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+<br>
+<br>
